@@ -103,6 +103,7 @@ const SortableItem = ({ todo, SetTodoList, TodoList, completedRef , showNotifica
   };
 
   let bg = todo.importance === "red" ? "red-600" : todo.importance === "orange" ? "orange-500" : "yellow-400";
+  let bgDark = todo.importance === "red" ? "[#8b0000]" : todo.importance === "orange" ? "orange-800" : "yellow-800";
 
   const handleDelete = () => {
     Swal.fire({
@@ -210,7 +211,7 @@ const SortableItem = ({ todo, SetTodoList, TodoList, completedRef , showNotifica
 
   return (
     <div ref={setNodeRef} {...attributes} {...listeners} style={style} className="px-5 dark:border-b-gray-900 flex flex-col justify-center items-center">
-      <div className={`py-5 px-10 shadow-2xl dark:bg-[#8b0000] rounded-2xl bg-${bg} dark:text-white dark:border-2 w-2xl max-sm:w-sm dark:border-${bg}`}>
+      <div className={`py-5 px-10 shadow-2xl dark:bg-${bgDark} rounded-2xl bg-${bg} dark:text-white dark:border-2 w-2xl max-sm:w-sm `}>
         <h1 className="text-center rounded-2xl text-white font-semibold capitalize tracking-wide">{todo.text}</h1>
       </div>
       <div className="w-full flex justify-center p-3 mb-5">
